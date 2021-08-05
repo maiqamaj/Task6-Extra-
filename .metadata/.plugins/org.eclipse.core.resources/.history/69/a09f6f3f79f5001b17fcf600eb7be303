@@ -1,0 +1,119 @@
+package com.example.demo;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="employees")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long employeeId;
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", salary=" + salary + ", job="
+				+ job + "]";
+	}
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNumber;
+	private String hireDate;
+	private double salary;
+	private int managerId ;
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@JoinColumn(name="job_id")
+	private Job job;
+	 @OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@JoinColumn(name="depatrtment_id")
+	 private List<Department> depatrtment;
+	
+	public Employee()
+    {
+        super();
+    }
+	public Employee(Long employeeId, String firstName, String lastName, String email, String phoneNumber,
+			String hireDate, double salary, int managerId,Job job, List<Department> depatrtment) {
+		 super();
+		 this.employeeId = employeeId;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.email = email;
+			this.phoneNumber = phoneNumber;
+			this.hireDate = hireDate;
+			this.salary = salary;
+			this.setManagerId(managerId);
+			
+	}
+	public Long getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(Long employeeId) {
+		this.employeeId = employeeId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getHireDate() {
+		return hireDate;
+	}
+	public void setHireDate(String hireDate) {
+		this.hireDate = hireDate;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	public Job getJob() {
+		return job;
+	}
+	public void setJob(Job job) {
+		this.job = job;
+	}
+	public int getManagerId() {
+		return managerId;
+	}
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
+	}
+	public List<Department> getDepatrtment() {
+		return depatrtment;
+	}
+	public void setDepatrtment(List<Department> depatrtment) {
+		this.depatrtment = depatrtment;
+	}
+
+}

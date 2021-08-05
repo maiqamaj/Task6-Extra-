@@ -1,0 +1,13 @@
+package com.example.demo;
+
+import java.util.HashMap;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface DepartmentRepository extends JpaRepository<Department,Integer>{
+
+	@Query(value="select Department.departmentName,sum(salary) from Department "
+			+ "inner join Employee on departmentName='IT' group by department_name;")
+	HashMap<String, Double> totalSalaryEmployess(String value);
+}

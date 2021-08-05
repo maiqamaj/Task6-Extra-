@@ -1,0 +1,12 @@
+package com.example.demo;
+
+public  class Location {
+	
+	private int locationId;
+	private String postalCode;
+	private String streetAddress;
+	private String city;
+	private Country country;
+	private String stateProvince;
+
+}

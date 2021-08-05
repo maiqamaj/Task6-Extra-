@@ -1,0 +1,11 @@
+package com.example.demo;
+
+public class Dependent {
+	
+	private Long dependentId;
+	private String firstName;
+	private String lastName;
+	private String relationship;
+	private Employee employee;
+
+}

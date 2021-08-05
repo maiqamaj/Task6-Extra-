@@ -1,0 +1,29 @@
+package com.example.demo;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="regions")
+public class Region {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long regionId;
+
+	@Override
+	public String toString() {
+		return "Region [regionId=" + regionId + "]";
+	}
+
+	public Long getRegionId() {
+		return regionId;
+	}
+
+	public void setRegionId(Long regionId) {
+		this.regionId = regionId;
+	}
+
+}

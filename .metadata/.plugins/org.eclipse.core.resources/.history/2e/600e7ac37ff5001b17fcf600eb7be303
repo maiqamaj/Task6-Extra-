@@ -1,0 +1,6 @@
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:sqlserver://192.168.1.27:49170;databaseName=data1
+spring.datasource.username=mai
+spring.datasource.password=123456
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.jpa.show-sql=true
