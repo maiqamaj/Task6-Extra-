@@ -8868,3 +8868,15 @@ java.lang.InterruptedException
 
 !ENTRY Activator 1 0 2021-08-06 00:35:19.490
 !MESSAGE Has main method computation for project 'demo'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-06 00:46:40.200
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ChSSevZM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-06 00:46:40.200
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.ChSSevZM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-06 00:46:40.201
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-06 00:46:40.201
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ChSSevZM => OK
